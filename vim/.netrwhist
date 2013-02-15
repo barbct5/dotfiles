@@ -1,0 +1,7 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =5
+let g:netrw_dirhist_1='/home/tucker/rails_apps/resque-web/app/views/layouts'
+let g:netrw_dirhist_2='/home/tucker/logik/backend/config/deploy'
+let g:netrw_dirhist_3='/var/chef-solo/cookbooks/elasticsearch'
+let g:netrw_dirhist_4='/var/chef-solo/cookbooks/java'
+let g:netrw_dirhist_5='/var/chef-solo/cookbooks/elasticsearch'
