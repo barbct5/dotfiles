@@ -9,8 +9,11 @@ endif
 
 filetype off
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
 filetype plugin indent on
 
+au FileType html compiler html
+au QuickFixCmdPost make cwindow
 
 " ========= Options ========
 
@@ -46,8 +49,8 @@ if &t_Co == 256
   colorscheme wombat256mod
 endif
 
-au FileType diff colorscheme desert
-au FileType git colorscheme desert
+au FileType diff colorscheme wombat256mod
+au FileType git colorscheme wombat256mod
 
 " File Types
 
@@ -69,10 +72,10 @@ autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd BufRead,InsertLeave * match ExtraWhitespace /\s\+$/
 
 " Autoremove trailing spaces when saving the buffer
-autocmd FileType ruby,c,cpp,java,php,html autocmd BufWritePre <buffer> :%s/\s\+$//e
+autocmd FileType ruby,c,cpp,java,php,html,haml autocmd BufWritePre <buffer> :%s/\s\+$//e
 
 " Highlight too-long lines
-autocmd BufRead,InsertEnter,InsertLeave * 2match LineLengthError /\%100v.*/
+autocmd BufRead,InsertEnter,InsertLeave * 2match LineLengthError /\%80v.*/
 highlight LineLengthError ctermbg=black guibg=black
 autocmd ColorScheme * highlight LineLengthError ctermbg=black guibg=black
 
@@ -102,21 +105,17 @@ let html_use_css=1
 let html_number_lines=0
 let html_no_pre=1
 
-let vimclojure#WantNailgun = 0
-let vimclojure#HighlightBuiltins = 1
-let vimclojure#ParenRainbow = 1
-
 let g:gist_clip_command = 'pbcopy'
 let g:gist_detect_filetype = 1
 
 let g:rubycomplete_buffer_loading = 1
-
 
 let g:no_html_toolbar = 'yes'
 
 let coffee_no_trailing_space_error = 1
 
 let NERDTreeIgnore=['\.pyc']
+let NERDTreeShowHidden=1
 
 let g:VimuxUseNearestPane = 1
 

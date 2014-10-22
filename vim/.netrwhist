@@ -1,7 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/tucker/rails_apps/resque-web/app/views/layouts'
-let g:netrw_dirhist_2='/home/tucker/logik/backend/config/deploy'
-let g:netrw_dirhist_3='/var/chef-solo/cookbooks/elasticsearch'
-let g:netrw_dirhist_4='/var/chef-solo/cookbooks/java'
-let g:netrw_dirhist_5='/var/chef-solo/cookbooks/elasticsearch'
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/Users/tucker/Code/erlang/jester_http/cookbooks/jester_cookbook/recipes'
+let g:netrw_dirhist_2='/Users/tucker/Code/erlang/jester_http/cookbooks/jester_cookbook/.kitchen'
+let g:netrw_dirhist_3='/Users/tucker/Code/erlang/jester_http/deps/node_package'
+let g:netrw_dirhist_4='/Users/tucker/Code/ruby_apps/wiggles'
+let g:netrw_dirhist_5='/Users/tucker/Code/erlang/gun/src'
+let g:netrw_dirhist_6='/Users/tucker/Code/erlang/gun'
+let g:netrw_dirhist_7='/Users/tucker/Code/erlang/riak_pb'
