@@ -1,9 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/tucker/Code/erlang/jester_http/cookbooks/jester_cookbook/recipes'
-let g:netrw_dirhist_2='/Users/tucker/Code/erlang/jester_http/cookbooks/jester_cookbook/.kitchen'
-let g:netrw_dirhist_3='/Users/tucker/Code/erlang/jester_http/deps/node_package'
-let g:netrw_dirhist_4='/Users/tucker/Code/ruby_apps/wiggles'
-let g:netrw_dirhist_5='/Users/tucker/Code/erlang/gun/src'
-let g:netrw_dirhist_6='/Users/tucker/Code/erlang/gun'
-let g:netrw_dirhist_7='/Users/tucker/Code/erlang/riak_pb'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/tucker/.irssi'
+let g:netrw_dirhist_2='/Users/tucker/Code/erlang/ecurvecp/TESt'

@@ -54,10 +54,9 @@ au FileType git colorscheme wombat256mod
 
 " File Types
 
-autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType erl setlocal tabstop=8 shiftwidth=4 softtabstop=4 expandtab
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4
 
-autocmd FileType tex setlocal textwidth=78
 autocmd BufNewFile,BufRead *.txt setlocal textwidth=78
 
 autocmd FileType ruby runtime ruby_mappings.vim
@@ -98,8 +97,7 @@ set statusline+=%P                        " percentage of file
 
 " ========= Plugin Options ========
 
-let g:AckAllFiles = 0
-let g:AckCmd = 'ack --type-add ruby=.feature --ignore-dir=tmp 2> /dev/null'
+let g:erlang_force_use_vimerl_indent = 1
 
 let html_use_css=1
 let html_number_lines=0
@@ -112,18 +110,13 @@ let g:rubycomplete_buffer_loading = 1
 
 let g:no_html_toolbar = 'yes'
 
-let coffee_no_trailing_space_error = 1
-
 let NERDTreeIgnore=['\.pyc']
 let NERDTreeShowHidden=1
 
 let g:VimuxUseNearestPane = 1
 
-"let g:CommandTMaxHeight = 15
-"let g:CommandTMatchWindowAtTop = 1
-"let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
-"let g:CommandTSelectNextMap = ['<C-n>', '<C-j>', '<ESC>OB']
-"let g:CommandTSelectPrevMap = ['<C-p>', '<C-k>', '<ESC>OA']
+let g:vim_markdown_folding_disabled=1
+let g:vim_json_syntax_conceal = 0
 
 " ========= Shortcuts ========
 
@@ -131,18 +124,6 @@ let g:VimuxUseNearestPane = 1
 map <silent> <LocalLeader>nt :NERDTreeToggle<CR>
 map <silent> <LocalLeader>nr :NERDTree<CR>
 map <silent> <LocalLeader>nf :NERDTreeFind<CR>
-
-" CommandT
-"map <silent> <leader>ff :CommandT<CR>
-"map <silent> <leader>fb :CommandTBuffer<CR>
-"map <silent> <leader>fr :CommandTFlush<CR>
-
-" Ack
-map <LocalLeader>aw :Ack '<C-R><C-W>'
-
-" TComment
-map <silent> <LocalLeader>cc :TComment<CR>
-map <silent> <LocalLeader>uc :TComment<CR>
 
 " Vimux
 map <silent> <LocalLeader>rl :wa<CR> :RunLastVimTmuxCommand<CR>

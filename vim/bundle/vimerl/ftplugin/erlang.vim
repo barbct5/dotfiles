@@ -31,6 +31,13 @@ let s:erlang_fun_begin = '^\(\a\w*\|[''][^'']*['']\)(.*$'
 let s:erlang_fun_end   = '^[^%]*\.\s*\(%.*\)\?$'
 
 function s:SetErlangOptions()
+	if executable('erl') != 1
+		echohl ErrorMsg
+		echomsg 'vimerl: erl command not installed'
+		echohl None
+		return
+	endif
+
 	compiler erlang
 	if version >= 700
 		setlocal omnifunc=erlang_complete#Complete
@@ -41,6 +48,9 @@ function s:SetErlangOptions()
 		setlocal foldexpr=GetErlangFold(v:lnum)
 		setlocal foldtext=ErlangFoldText()
 	endif
+
+  syntax match Tab /\t/"
+  hi Tab gui=underline guifg=blue ctermbg=blue
 
 	setlocal comments=:%%%,:%%,:%
 	setlocal commentstring=%%s
