@@ -3,7 +3,7 @@
     (setq erlang-root-dir "/opt/erlang/17.5"))
 
 ;; Load Erlang-Mode configuration
-(add-to-list 'load-path (concat (file-name-directory load-file-name) "erlang-rig/"))
+(add-to-list 'load-path "~/.emacs.d/erlang-rig/")
 (require 'erlang-config)
 
 ;; Load color theme
