@@ -1,0 +1,16 @@
+[Erln8]
+color=true
+banner=false
+default_config=default
+system_default=
+
+[Repos]
+default=https://github.com/erlang/otp.git
+
+[Erlangs]
+none=
+18.0.1=~/.erln8.d/otps/18.0.1
+
+[Configs]
+default=osx_llvm
+osx_llvm=--disable-hipe --without-hipe --enable-smp-support --enable-threads --enable-kernel-poll --enable-darwin-64bit --enable-builtin-zlib --enable-dirty-schedulers --with-ssl=/usr/local/opt/openssl --enable-vm-probes --with-dynamic-trace=dtrace
