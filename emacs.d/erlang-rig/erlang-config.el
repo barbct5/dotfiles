@@ -2,8 +2,8 @@
     (not (boundp 'erlang-root-dir))
     (message "Skipping erlang-mode: erlang-root-dir not defined. To hook up erlang mode, set erlang-root-dir in your .emacs file before the call to 'require my-config'.")
   (progn
-    (set 'erlang-bin (concat erlang-root-dir "/bin/"))
-    (set 'erlang-lib (concat erlang-root-dir "/lib/"))
+    (set 'erlang-bin (concat erlang-root-dir "bin/"))
+    (set 'erlang-lib (concat erlang-root-dir "lib/erlang/lib/"))
     (if
 	(not (boundp 'erlang-mode-path))
 	(set 'erlang-mode-path

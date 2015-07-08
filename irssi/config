@@ -122,7 +122,8 @@ channels = (
   { name = "#netfuze"; chatnet = "NetFuze"; autojoin = "No"; },
   { name = "#erlang"; chatnet = "freenode"; },
   { name = "silc"; chatnet = "SILC"; autojoin = "No"; },
-  { name = "#erlang"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#erlang"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#docker"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -384,4 +385,9 @@ settings = {
     nick = "tucker";
   };
   "fe-text" = { actlist_sort = "refnum"; };
+  "perl/core/scripts" = {
+    growl_on_regex = "bturker";
+    growl_channel_regex = "erlang";
+  };
 };
+hilights = ( { text = "bturker"; nick = "yes"; word = "yes"; } );
