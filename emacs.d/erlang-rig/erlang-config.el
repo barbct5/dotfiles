@@ -4,6 +4,7 @@
   (progn
     (set 'erlang-bin (concat erlang-root-dir "bin/"))
     (set 'erlang-lib (concat erlang-root-dir "lib/erlang/lib/"))
+
     (if
 	(not (boundp 'erlang-mode-path))
 	(set 'erlang-mode-path

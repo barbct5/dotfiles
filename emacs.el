@@ -1,11 +1,20 @@
 ;; Set Erlang root directory
 (if (not (boundp 'erlang-root-dir))
-    (setq erlang-root-dir "~/.erln8.d/otps/18.0.1/dist/"))
+    (setq erlang-root-dir "~/.erln8.d/otps/19.0.5/dist/"))
 
 (setq backup-directory-alist
       `((".*" . ,temporary-file-directory)))
 (setq auto-save-file-name-transforms
       `((".*" ,temporary-file-directory)))
+
+;; Setup MELPA
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (add-to-list
+   'package-archives
+   '("melpa-stable" . "http://stable.melpa.org/packages/")
+   t)
+  (package-initialize))
 
 ;; Remove backup files that are older than 1 week
 (message "Deleting old backup files...")
@@ -22,8 +31,31 @@
 (add-to-list 'load-path "~/.emacs.d/erlang-rig/")
 (require 'erlang-config)
 
+;; Disable menu bar
+(menu-bar-mode -1)
+
+;; Load Enhanced Ruby Mode
+;;(add-to-list 'load-path "~/.emacs.d/enhanced-ruby-mode")
+;;(autoload 'enh-ruby-mode "enh-ruby-mode" "Major mode for Ruby files" t)
+
+;;(add-to-list 'auto-mode-alist '("\\.rb$" . enh-ruby-mode))
+;;(add-to-list 'auto-mode-alist '("Rakefile$" . enh-ruby-mode))
+;;(add-to-list 'auto-mode-alist '("Gemfile$" . enh-ruby-mode))
+;;(add-to-list 'auto-mode-alist '("Capfile$" . enh-ruby-mode))
+;;(add-to-list 'auto-mode-alist '("\\.gemspec$" . enh-ruby-mode))
+
+;;(add-to-list 'interpreter-mode-alist '("ruby" . enh-ruby-mode))
+
+;; Load Robe
+;(add-hook 'ruby-mode-hook 'robe-mode)
+;;(add-hook 'enh-ruby-mode-hook 'robe-mode)
+
+;; Load RbEnv
+;;(setq rbenv-installation-dir "/usr/local/opt/rbenv")
+
 ;; Load color theme
-(load-theme 'tango-dark t)
+(add-to-list 'custom-theme-load-path "~/emacs.d/themes/")
+(load-theme 'tango t)
 
 ;; Highlight extra whitespace and long lines
 (require 'whitespace)
@@ -32,13 +64,19 @@
 
 ;; Configure auto-insert-mode
 (auto-insert-mode)
-(setq auto-insert-directory "~/.emacs.d/templates/")
 (setq auto-insert-query nil)
 
 ;; Automatically add Apache 2.0 license to Erlang files
 (define-auto-insert "\.[e|h]rl" "apache-license.erl")
-
-;; Enable git-status mode
-(add-to-list 'load-path "/usr/local/share/git-core/contrib/emacs/")
-(require 'git)
-(require 'git-blame)
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(custom-enabled-themes (quote (tango-dark))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ )

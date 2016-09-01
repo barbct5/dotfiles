@@ -29,14 +29,7 @@ servers = (
     port = "6667";
   },
   {
-    address = "Freenode";
-    port = "0";
-    password = "6697";
-    use_ssl = "no";
-    ssl_verify = "no";
-  },
-  {
-    address = "weber.freenode.net";
+    address = "barjavel.freenode.net";
     chatnet = "freenode";
     port = "6697";
     password = "IrcFreeN0d3R0x!";
@@ -123,7 +116,9 @@ channels = (
   { name = "#erlang"; chatnet = "freenode"; },
   { name = "silc"; chatnet = "SILC"; autojoin = "No"; },
   { name = "#erlang"; chatnet = "Freenode"; autojoin = "yes"; },
-  { name = "#docker"; chatnet = "freenode"; autojoin = "yes"; }
+  { name = "#docker"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#riak"; chatnet = "freenode"; autojoin = "yes"; },
+  { name = "#consul"; chatnet = "freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -390,4 +385,15 @@ settings = {
     growl_channel_regex = "erlang";
   };
 };
-hilights = ( { text = "bturker"; nick = "yes"; word = "yes"; } );
+hilights = (
+  { text = "bturker"; nick = "yes"; word = "yes"; },
+  { text = "tucker"; nick = "yes"; word = "yes"; mask = "yes"; },
+  { text = "@channel"; nick = "yes"; word = "yes"; mask = "yes"; },
+  { text = "@tucker"; nick = "yes"; word = "yes"; }
+);
+ignores = (
+  {
+    level = "JOINS PARTS QUITS NICKS";
+    channels = ( "#erlang", "#riak", "#consul", "#docker" );
+  }
+);
