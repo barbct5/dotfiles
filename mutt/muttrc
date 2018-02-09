@@ -39,7 +39,7 @@ set reverse_name=yes
 set postpone=ask-no
 set print=ask-yes
 set delete=no
-set include
+set include=yes
 set sort=threads
 set sort_aux=date-received
 set charset=iso-8859-1
@@ -48,7 +48,7 @@ set ascii_chars=yes
 set meta_key=yes
 set attribution="* %n <%a> [%{%Y-%m-%d %H:%M:%S %Z}]:\n"
 set edit_headers
-set fast_reply
+set fast_reply=yes
 set nohelp
 set nomark_old
 set nobeep
