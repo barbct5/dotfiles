@@ -1,0 +1,80 @@
+[colors]
+background = #DD2E3440
+background-alt = #DD4C566A
+foreground = #D8DEE9
+foreground-alt = #4C566A
+primary = #81A1C1
+success = #A3BE8C
+warning = #EBCB8B
+danger = #BF616A
+
+[bar/default]
+height = 32
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+font-0 = JetBrains Mono:pixelsize=12:style:Regular;3
+font-1 = Material Icons:pixelsize=12:style:Regular;3
+
+modules-left = i3
+modules-center = xwindow
+modules-right = date
+cursor-click = pointer
+
+[settings]
+screenchange-reload = true
+
+[module/i3]
+type = internal/i3
+format = <label-state> <label-mode>
+index-sort = true
+wrapping-scroll = false
+
+pin-workspaces = true
+strip-wsnumbers = true
+
+label-mode-padding = 2
+label-mode-foreground = ${colors.background}
+label-mode-background = ${colors.primary}
+
+; Active workspace on focused monitor
+label-focused = %icon%
+label-focused-background = ${colors.background-alt}
+label-focused-underline = ${colors.primary}
+label-focused-padding = 2
+
+; Inactive workspace on any monitor
+label-unfocused = %icon%
+label-unfocused-padding = 2
+
+; Active workspace on unfocused monitor
+label-visible = %icon%
+label-visible-background = ${colors.background-alt}
+label-visible-padding = 2
+
+; Workspace with urgency hint set
+label-urgent = %icon%
+label-urgent-background = ${colors.danger}
+label-urgent-padding = 2
+
+ws-icon-0 = 1;1
+ws-icon-1 = 2;2
+ws-icon-2 = 3;3
+ws-icon-3 = 4;4
+ws-icon-4 = 5;5
+ws-icon-5 = 1b;1b
+ws-icon-6 = 2b;2b
+ws-icon-7 = 3b;3b
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:50:…%
+
+[module/date]
+type = internal/date
+interval = 1
+date = %a %d %b
+time = %H:%M:%S
+label = "%date% %time%"
